@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.16)
+project(MyDB CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Compiler warnings / optimisations
+add_compile_options(-Wall -Wextra -O2)
+
+include_directories(include)
+
+# ── Phase 1: Storage layer tests ──────────────────────────────────────────────
+add_executable(test_phase1 tests/test_phase1.cpp)
+target_include_directories(test_phase1 PRIVATE include)
+
+# We'll add more targets as we build each phase:
+#   add_executable(test_phase2 ...)   # B+ Tree
+#   add_executable(test_phase3 ...)   # SQL Parser
+#   ...
