@@ -38,7 +38,7 @@ void test_page_layout() {
     OK(p.header.page_id   == 7,               "page_id set to 7");
     OK(p.header.page_type == PageType::DATA,   "page_type DATA");
     OK(p.header.num_slots == 0,                "num_slots starts at 0");
-    OK(p.free_space()     == PAGE_DATA_SIZE,   "full data region is free");
+    OK(p.free_space()     == PAGE_DATA_SIZE,   "full data region is free"); 
 }
 
 void test_page_records() {
